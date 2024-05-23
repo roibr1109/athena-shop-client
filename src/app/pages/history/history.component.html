@@ -1,0 +1,5 @@
+<div>Buying history</div>
+<div> Total: {{purchasedItems.length}}</div>
+<div *ngFor="let item of purchasedItems">
+    <app-purchased-item [shoeItem]="item"></app-purchased-item>
+</div>

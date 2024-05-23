@@ -1,0 +1,46 @@
+.size-container{
+    display: grid;
+    grid-template-columns: 65px 65px 65px 65px;
+    row-gap: 1px;
+    column-gap: 1px;
+    width: 92%;
+    height: 16vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-color: red !important;
+
+    .size-item {
+        text-align: center;
+        font-weight: lighter;
+        font-family: lato;
+        color: #B4B4B4;
+        border-style: solid;
+        border-radius: 10px;
+        margin-right: 1em;
+        margin-top: 1em;
+        width: 20px;
+        height: 20px;
+        padding: 10px;
+    }
+    
+    .size-item:hover {
+        cursor: pointer !important;
+    }
+    
+    .clicked {
+        background-color: #404040; 
+    }
+    
+}
+
+.size-container::-webkit-scrollbar{
+    width: 5px ;
+    background: rgba(0,0,0,0.25);
+    border-radius: 5px;    
+}
+
+.size-container::-webkit-scrollbar-thumb{
+    width: 5px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;    
+}

@@ -1,0 +1,22 @@
+<nav id="nav">
+  <img id="logo" src="../assets/utils/OfekUnit.png">
+  <h1><a routerLink="/main-page">AthenaShop</a></h1>
+  <div class="space">
+    <div>
+      <a class="link" routerLink="/shop-page"> Shop</a>
+      <a class="link" routerLink="/history-page"> History</a>
+      <a class="link" routerLink="/newItem-page"> New Item</a>
+    </div>
+    <div class="organize">
+        <a id="cartLink" class="link" routerLink="/my-cart-page">
+        <div>
+          My Cart
+        </div><img id="cart" src="../assets/utils/shopping-cart.svg"></a>
+        <a *ngIf="isSignIn" class="link" (click)="logOut()">log out</a>
+
+    </div>
+  </div>
+</nav>
+<div id="content">
+<router-outlet></router-outlet>
+</div>

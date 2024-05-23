@@ -1,0 +1,57 @@
+@color-light: #B4B4B4;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: center;
+  margin-top: 10vh;
+  font-weight: normal;
+  font-family: lato;
+}
+
+.title {
+  font-family: lato;
+  font-weight: bold;
+}
+
+.sortLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-line {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+}
+
+.filterBox {
+  margin-right: 1%;
+  font-weight: lighter;
+  font-family: lato;
+  text-align: center;
+  color: @color-light;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+.filterBox:hover {
+  cursor: pointer;
+}
+
+#clearButton:hover {
+  cursor: pointer;
+}
+
+#clearButton {
+  padding: 10px;
+  color: @color-light;
+  font-weight: lighter;
+  font-family: lato;
+  border-bottom: 1px solid black;
+}

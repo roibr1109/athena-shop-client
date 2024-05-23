@@ -1,0 +1,43 @@
+<div *ngIf="selectedShoe; else displayAllShoes">
+    <div class="seperate" >
+        <div>
+            <img id="selected-shoe-img" [src]="imgSrc">
+        </div>
+        <div>
+            <div id="model">
+            {{selectedShoe.basicShoe.brands}}  {{selectedShoe.basicShoe.model}}
+            </div>
+            <div id="size-container">
+                <div id="text">Your size</div>
+                <div id="container">
+                    <div *ngFor="let size of sizes" (click)="chooseSize(size)" class="size-button button-style-hovering" [class.clicked] = "size === curentSize"> {{size}}</div>
+                </div>
+            </div>
+            <div>
+                <div class="bold">
+                    Price
+                </div>
+                <div id="price">
+                    {{selectedShoe.basicShoe.price}}
+                </div>
+            </div>
+            <div>
+                <div class="bold">
+                    Rating
+                </div>
+                <div class="rating">
+                    <app-rating [rate]="selectedShoe?.basicShoe?.rank"></app-rating>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div (click)="addItemToSell()" class="add-to-sell-button">Add to sale</div>
+</div>
+<ng-template #displayAllShoes>
+    <div >
+        <h3>Pick a basic shoe for sale</h3>
+        <div class="grid-container">
+            <app-shoe-card *ngFor="let item of basicShoesToSell" [onNewItemPage]="true" (moveItemToSale)="getSelectedShoe($event)" [shoeItem]= "item" ></app-shoe-card> 
+        </div>
+    </div>
+</ng-template>

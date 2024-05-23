@@ -1,0 +1,72 @@
+{
+  "name": "athena-shop2",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "jest",
+    "test:lib": "jest --config ./jest.lib.config.js",
+    "test:app": "jest --config ./jest.app.config.js",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$"
+      }
+    }
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.2.0",
+    "@angular/cdk": "^15.2.9",
+    "@angular/common": "^15.2.9",
+    "@angular/compiler": "^15.2.0",
+    "@angular/compiler-cli": "^15.2.0",
+    "@angular/core": "^15.2.0",
+    "@angular/forms": "^15.2.0",
+    "@angular/material": "^15.2.9",
+    "@angular/platform-browser": "^15.2.0",
+    "@angular/platform-browser-dynamic": "^15.2.0",
+    "@angular/router": "^15.2.0",
+    "@apollo/client": "^3.5.1",
+    "@ngneat/elf-entities": "^5.0.1",
+    "angular2-notifications": "^16.0.1",
+    "apollo-angular": "^5.0.0",
+    "font-awesome": "^4.7.0",
+    "graphql": "^15.7.2",
+    "graphql-tag": "^2.12.6",
+    "moment": "^2.29.1",
+    "rxjs": "~7.4.0",
+    "sweetalert2": "^11.1.2",
+    "tslib": "^2.6.2",
+    "typescript": "~4.9.8",
+    "zone.js": "~0.12.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^15.2.11",
+    "@angular/cli": "~15.2.3",
+    "@angular/compiler-cli": "^15.2.0",
+    "@types/jest": "^26.0.21",
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.2",
+    "jest": "^26.6.3",
+    "jest-preset-angular": "^8.4.0",
+    "ts-mockito": "^2.6.1",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
+    "typescript": "~4.9.5"
+  }
+}

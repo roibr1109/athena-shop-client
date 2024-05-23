@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    background-color: #FBF7F6;
+    margin-left: 5em;
+}
+
+body {
+    margin-left: 5em;
+    user-select: none;
+    font-family: lato;
+    width: 90%;
+    .button-style-hovering:hover {
+        background-color:rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+}
+
+@font-face{
+    font-family: lato;
+    src: url('./assets/Lato-font/Lato/Lato-Light.ttf');
+    font-weight: lighter;
+}
+
+@font-face{
+    font-family: lato;
+    src: url('./assets/Lato-font/Lato/Lato-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face{
+    font-family: lato;
+    src: url('./assets/Lato-font/Lato/Lato-Regular.ttf');
+    font-weight: normal;
+}
+
+@background-color : #FBF7F6;
+@color-dark: #404040;
+@color-light: #B4B4B4;
+@color-medium: #999999;
+@color-red: #E45959;
+
+
+
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background {
+    background-color: #E45959 !important;
+}
+
+.mdc-checkbox-frame {
+    background-color: white;
+    box-shadow: none !important;
+    transition: border-color 90ms cubic-bezier(0, 0, 0.2, 0.1);
+    border: 2px solid rgba(0,0,0,0.15);
+}
+
+.mat-expansion-panel-header {
+    color: #404040 !important;
+    padding-left: 0 !important;
+}
+
+.mat-expansion-panel {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.mat-mdc-slider {
+    width: 95% !important;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #000000;
+}
+
+.mat {
+    width: 90%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

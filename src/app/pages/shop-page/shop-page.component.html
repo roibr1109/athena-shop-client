@@ -1,0 +1,26 @@
+<div id="filter">
+    <h3 id="header">Filter</h3>
+    <mat-expansion-panel [expanded]="true" class="mat">
+        <mat-expansion-panel-header>
+            Size
+        </mat-expansion-panel-header>
+        <input id="size-input" type="number" [(ngModel)]="searchedText" placeholder="Your size">
+        <app-size [searchedText]="searchedText" (OutputSize)="changingSizeFilter($event)" [curentSize]="sizeFilter"></app-size>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true" class="mat">
+        <mat-expansion-panel-header>
+            Brands
+        </mat-expansion-panel-header>
+        <app-brand-filter [brandsFiltered]="brandArrayFilter" (changingAllBrands)="updateBrands($event)" (changingBrandsFilter)="changeBrandsFilter($event)"></app-brand-filter>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true" class="mat">
+        <mat-expansion-panel-header>
+            Price
+        </mat-expansion-panel-header>
+        <app-filter [priceValue]="priceValue" (changingPriceFilter)="fetchingPriceFilter($event)"></app-filter>
+    </mat-expansion-panel>
+    
+</div>
+<div id="shop">
+    <app-shop-container (removeSizeFilter)="changingSizeFilter($event)" (removeBrand)="updateBrands($event)" [sizeFilter]="sizeFilter" [filteredBrands]="brandArrayFilter" [priceValue]="priceValue"></app-shop-container>
+</div>

@@ -1,0 +1,21 @@
+<div class="section">
+    <h1>Sign in into athena shop</h1>
+    <div id="displayFlex">
+        <mat-form-field appearance="fill">
+            <mat-label>username</mat-label>
+            <input [(ngModel)]="usernameInputed" matInput>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>password</mat-label>
+            <input  type="password" [(ngModel)]="passwordInputed" matInput>
+        </mat-form-field>
+    </div>
+    <div class="sign-in-button button-style-hovering" (click)="signIn()">
+        <div *ngIf="!loading" >sign in</div>
+        <mat-progress-spinner *ngIf="loading" [class.spinner]="loading" [diameter]="30" class="custom-spinner" mode="indeterminate"></mat-progress-spinner>
+    </div>
+    <div class="sign-in-button button-style-hovering" (click)=" signUp()">sign up for new user</div>
+</div>
+<simple-notifications></simple-notifications>

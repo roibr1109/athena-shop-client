@@ -1,0 +1,48 @@
+<div *ngIf="shoeItem">
+    <div *ngIf="forSale" class="saleBox">
+        <img class="forSaleImg" [src] = "this.src">
+        <div id="parts">
+            <div class="details" > {{shoeItem.basicShoe?.brands}}  {{shoeItem.basicShoe?.model}} 
+                <span class="toolTip">{{shoeItem.basicShoe?.brands}}  {{shoeItem.basicShoe?.model}}</span>
+            </div>
+            <div class="line">
+                <div class="details">{{shoeItem.basicShoe?.rank}}/5</div>
+                <img class="icon" src="../../../assets/utils/Five_Pointed_Star_Solid.svg">
+                <div class="details"> {{shoeItem.size}}</div>
+            </div>
+            <div class="line">
+                <div *ngIf="!onNewItemPage; else newItemPage" (click) = "addItemToCart(shoeItem)" class="add-item-button button-style-hovering">
+                    <div *ngIf="!loading">Add +</div>
+                    <mat-progress-spinner *ngIf="loading" [class.spinner]="loading" [diameter]="30" class="custom-spinner" mode="indeterminate"></mat-progress-spinner>
+                </div>
+                <ng-template #newItemPage >
+                    <div (click) = "sell(shoeItem)" class="button-style-hovering add-item-button">
+                        sell
+                    </div>
+                </ng-template>
+                <div class="price">${{shoeItem.basicShoe?.price}}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!forSale" class="cartStyle">
+        <div id="divider">
+            <img class="img" [src] = "src"> 
+            <div id="parts">
+                <div class="firstLine">
+                    <div class="details" >
+                        {{shoeItem.basicShoe?.brands}}  {{shoeItem.basicShoe?.model}}
+                    </div>
+                    <div class="button-style-hovering removeButton" *ngIf="!onHistoryPage" (click)="removeItemFromCart()">
+                        x
+                    </div>
+                </div>
+                <div class="size"> 
+                    Size: {{shoeItem.size}} (US Men)
+                </div>
+                <div class="price">
+                    ${{shoeItem.basicShoe?.price}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

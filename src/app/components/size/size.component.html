@@ -1,0 +1,3 @@
+<div class="size-container">
+    <div  class="size-item button" *ngFor="let size of sizes" [class.clicked] = "size === curentSize" (click)="filterSize(size)"> {{size}}</div>
+</div>

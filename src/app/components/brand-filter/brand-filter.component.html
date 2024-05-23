@@ -1,0 +1,11 @@
+
+<div>
+    <ul class="checkboxes">
+        <li class="checkbox"> 
+            <mat-checkbox [checked]="allComplete" (change)="setAll($event.checked)"> ALL</mat-checkbox>
+        </li>
+        <li class="checkbox" *ngFor="let brand of brands">
+            <mat-checkbox [(ngModel)]="brand.completed" (change)="updateFilter(brand.name)"> {{brand.name}}</mat-checkbox>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,33 @@
+<div class="item">
+<app-shoe-card  [onHistoryPage]="true" [forSale]="false" [shoeItem]="shoeItem"></app-shoe-card>
+    <div class="divider"></div>
+    <div class="sideDetails">
+        <div class="period">
+        <div>Sale Info</div>
+            <div class="sameLine">
+                <div>
+                Date Purchased
+                </div>
+                <div>
+                    {{ formatDate }}
+                </div>
+            </div>
+            <div class="sameLine">
+                <div>
+                Day
+                </div>
+                <div>
+                    {{ formatDay }}
+                </div>
+            </div>
+            <div class="sameLine">
+                <div>
+                Rate This item
+                </div>
+                <div (click)="openDialog()" >
+                    <app-rating [rate]="shoeItem.userRating"></app-rating>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div> 

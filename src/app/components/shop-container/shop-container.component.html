@@ -1,0 +1,23 @@
+<h2 class="title">SNEAKERS SHOP</h2>
+<div class="sortLine">
+  <div>
+    <span>Sort by </span>
+    <mat-form-field>
+      <mat-label>selected</mat-label>
+      <mat-select (selectionChange)="changeSort($event)">
+        <mat-option *ngFor="let sort of sorts" [value]="sort.value"> {{ sort.viewValue }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="filter-line">
+  <div class="filterBox">Price: $0-{{ priceValue }}</div>
+  <div (click)="removeSize()" class="filterBox" *ngIf="sizeFilter">{{ sizeFilter }} x</div>
+  <div (click)="removeFilter(filter)" [ngClass]="'filterBox'" *ngFor="let filter of filteredBrands">Brand: {{ filter }}
+    &nbsp; &nbsp; x
+  </div>
+  <div id="clearButton" (click)="clearFilter()">Clear all</div>
+</div>
+<div class="grid-container">
+  <app-shoe-card *ngFor="let item of filteredItems" [shoeItem]="item"></app-shoe-card>
+</div>

@@ -1,0 +1,56 @@
+<h1>Your bag</h1>
+<div class="section">
+    <div id="shoesLists">
+        <div *ngFor="let item of itemForSale" class="shoe">
+            <app-shoe-card  [forSale]="false" [shoeItem]="item"></app-shoe-card>
+        </div>
+    </div>
+    <div id="checkout">
+        <div id="order">
+            <h4>Order summary:</h4>
+            <div class="line-with-spaces">
+                <div>
+                    Original price:
+                </div>
+                <div>
+                {{totalPriceOfShoes}}$
+                </div> 
+            </div>
+            <div class="line-with-spaces">
+                <div>
+                    {{itemForSale.length}} for sale
+                </div>
+                <div>
+                {{totalPriceOfShoes}}$
+                </div> 
+            </div>
+            <div class="line-with-spaces">
+                <div>
+                    delivery:
+                </div>
+                <div>
+                {{deliveryCost}}$
+                </div> 
+            </div>
+        </div>
+        <div class="line-with-spaces">
+            <div>
+                Total
+            </div>
+            <div id="totalPrice">
+            {{deliveryCost + totalPriceOfShoes}} $
+            </div> 
+        </div>
+    <div class="checkout-button" [class.hover]="!loading" (click)="checkout()"> 
+        <div >
+            <mat-progress-spinner *ngIf="loading" [class.spinner]="loading" [diameter]="30" class="custom-spinner" mode="indeterminate"></mat-progress-spinner>
+        </div>
+        <div *ngIf="!loading">
+        Checkout</div>
+    </div>
+    <simple-notifications></simple-notifications>
+    </div>
+</div>
+<div id="topPicks">
+    <app-top-picks></app-top-picks>
+</div>
